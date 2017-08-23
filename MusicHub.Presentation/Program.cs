@@ -14,7 +14,7 @@ namespace MusicHub.Presentation
             var authorRepository = new AuthorRepository();
             while (true)
             {
-                Console.WriteLine("Pick an option\n 1) Access Authors\n 2) Access Songs");
+                Console.WriteLine("Pick an option\n 1) Access Authors\n 2) Access Songs 3) Add a song to an author");
 
                 int optionChosen = int.Parse(Console.ReadLine());
 
@@ -28,7 +28,7 @@ namespace MusicHub.Presentation
                     {
                         Console.WriteLine("Name: ");
                         string name = Console.ReadLine();
-                        authorRepository.GetAuthorByName(name).Songs.ToList().ForEach(x => Console.WriteLine(x.NameAndDuration)); //TRY CATch
+                        authorRepository.GetAuthorByName(name).Songs.ToList().ForEach(x => Console.WriteLine(x.NameAndDuration));
                     }
 
                     else if (optionChosen == 2)
@@ -55,7 +55,7 @@ namespace MusicHub.Presentation
                             Console.WriteLine("Name: ");
                             name = Console.ReadLine();
                         }
-                        while (authorRepository.GetAuthorByName(name) == null);
+                        while (authorRepository.GetAuthorByName(name) == null); //please note: != changed to ==
 
                         Console.WriteLine("Password: ");
                         string password = Console.ReadLine();

@@ -39,8 +39,16 @@ namespace MusicHub.Domain
             using (var context = new MusicHubDb())
             {
                 Author author = context.Authors.Where(x => x.FullName == fullName && x.Password == password).FirstOrDefault();
-                context.Entry(author).State = EntityState.Deleted;
 
+                try
+                {
+                    context.Entry(author).State = EntityState.Deleted;
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.WriteLine("Error - wrong password"); //could not be the wrong name as that is checked earlier (.Presentation via GetAuthorByName method)
+                }
+                
                 context.SaveChanges();
             }
         }
