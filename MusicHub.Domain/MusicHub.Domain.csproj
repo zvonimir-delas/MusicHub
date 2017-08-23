@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorRepository.cs" />
     <Compile Include="DTOs\AuthorDTO.cs" />
     <Compile Include="DTOs\SongDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SongRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MusicHub.Data\MusicHub.Data.csproj">
