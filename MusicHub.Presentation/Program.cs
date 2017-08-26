@@ -14,15 +14,9 @@ namespace MusicHub.Presentation
             var authorRepository = new AuthorRepository();
             while (true)
             {
-                Console.WriteLine("Pick an option\n 1) Access Authors\n 2) Access Songs 3) Add a song to an author");
-
-                int optionChosen = int.Parse(Console.ReadLine());
-
-                if (optionChosen == 1)
-                {
                     Console.WriteLine("Pick an option\n 1) View songs by an author\n 2) Add an author\n 3) Remove an author");
 
-                    optionChosen = int.Parse(Console.ReadLine());
+                    int optionChosen = int.Parse(Console.ReadLine());
 
                     if (optionChosen == 1)
                     {
@@ -62,7 +56,6 @@ namespace MusicHub.Presentation
 
                         authorRepository.DeleteAuthor(name, password);
                     }
-                }
             }
         }
     }
